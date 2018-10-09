@@ -31,8 +31,48 @@ body{
 .navbar li a:hover{
 	background: #696969;
 	color: #fff;
-	width: 100%;
 	border-radius: 12px;
+}
+.content{
+	max-width: 85%;
+	margin-top: 40px;
+	margin-left: 7.5%;
+
+	height: 450px;
+	background: #fffced;
+	padding: 10px;
+}
+.info-section{
+	position: relative;
+	display: inline-block;
+	margin: 30px;
+	padding: 20px;
+}
+p#tagline{
+	font-size: 11px;
+}
+.info-section-list{
+	margin: 10px;
+	padding: 10px 10px;
+}
+.info-section-list ul{
+	list-style-type: circle;
+}
+.info-section-list li{
+	font-size: 14px;
+	font-weight: bold;
+	padding-bottom: 5px;
+}
+.login{
+	display: inline;
+	width: 30%;
+	height:300px;
+	margin-top: 20px;
+	margin-right: 60px;
+	text-align: center;
+	font-size: 11px;
+	float: right;
+	padding: 40px 10px;
 }
 footer{
 	position: fixed;
