@@ -6,12 +6,103 @@ body{
 }
 .navbar ul{
 	margin: 0;
+	width:100%;
 	height: 40px;
 	padding-left: 15px;
 	background: #ffa500;
 	position: fixed;
+	list-style-type: none;
 }
 .navbar li.left-float{
 	float: left;
-	margin-left: 0}
+	margin-left: 0;
+}
+.navbar li.right-float{
+	float: right;
+	margin-right: 30px;
+}
+.navbar li a{
+	display: inline-block;
+    text-decoration: none;
+    padding: 12px 5px;
+    color: #fff;
+}
+.navbar a:hover{
+	color: #555;
+} 
+.vertical-navbar ul{
+    margin-top: 40px;
+    padding-left: 0;
+    list-style-type: none;
+    height: 1000px;
+    overflow: hidden;
+    background: #ffa500;
+    min-width: 10%;
+    max-width: 15%;
+    position: fixed;
+}
+
+.vertical-navbar li a {
+    display: block;
+    color: #fff;
+    padding: 8px  16px;
+    text-decoration: none;
+}
+.vertical-navbar li a:hover{
+    background: #696969;
+    color: #fff;
+}
+.input-container{
+	position: absolute;
+	background: #fffced;
+	width: 75%;
+	height: 100px;
+	margin-top: 50px;
+	margin-left: 20%;
+	font-size: 11px;
+	padding: 0;
+	border-radius: 4px;
+}
+.input-container input[type=text]{
+	display: inline-block;
+	position: relative;
+	border-radius: 6px;
+	width: 200px;
+	margin: 15px;
+	height: 30px;
+	border: 1px solid #A9A9A9;
+}
+.input-container input[type=search]{
+	display: inline-block;
+	position: relative;
+	border-radius: 6px;
+	width: 200px;
+	margin: 20px;
+	height: 30px;
+	border: 1px solid #A9A9A9;
+}
+.input-container input[type=button]{
+	width: 100px;
+	height: 30px;
+	background: #ffa500;
+	border-width: 0;
+	border-radius: 6px; 
+	margin: 15px;
+	font-size: 14px;
+	letter-spacing: 6px;
+	color: #fff;
+}
+.input-container input[type=submit]:hover{
+	background: #555;
+	color: #ffa500;
+}
+.wrapper{
+	width: 75%;
+	position: absolute;
+	margin-top: 180px;
+	margin-left: 20%;
+	height: 400px;
+	background: #fffced;
+	border-radius: 4px;
+	padding: 10px;
 }
