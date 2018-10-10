@@ -13,9 +13,20 @@ body{
 	position: fixed;
 	list-style-type: none;
 }
+.navbar img#icon{
+	display: inline-block;
+	width: 15px;
+	margin-top: 15px ;
+	margin-right: 20px;
+	float: right;
+	height: 15px;
+	margin-bottom: 0px;
+ 
+}
 .navbar li.left-float{
 	float: left;
 	margin-left: 0;
+	padding: 4px;
 }
 .navbar li.right-float{
 	float: right;
@@ -55,7 +66,7 @@ body{
 .input-container{
 	position: absolute;
 	background: #fffced;
-	width: 75%;
+	width: 76%;
 	height: 100px;
 	margin-top: 50px;
 	margin-left: 20%;
@@ -82,20 +93,43 @@ body{
 	border: 1px solid #A9A9A9;
 }
 .input-container input[type=button]{
+	display: inline;
 	width: 100px;
 	height: 30px;
 	background: #ffa500;
 	border-width: 0;
 	border-radius: 6px; 
-	margin: 15px;
+	margin-bottom: 20px;
 	font-size: 14px;
-	letter-spacing: 6px;
 	color: #fff;
 }
-.input-container input[type=submit]:hover{
+
+input[type=button]:hover{
 	background: #555;
 	color: #ffa500;
 }
+.input-container input[type=submit]{
+	display: inline;
+	margin: 30px;
+	width: 100px;
+	height: 30px;
+	background: #ffa500;
+	border-width: 0;
+	border-radius: 6px; 
+	font-size: 14px;
+	color: #fff;
+}
+.navbar img.icon{
+	display: inline-block;
+	margin-top: 10px;
+	color: #fff;
+	float: right;
+	width: 20px;
+	height: 20px;
+	float:right;
+	margin-right: 30px;
+}
+
 .wrapper{
 	width: 75%;
 	position: absolute;
@@ -105,4 +139,21 @@ body{
 	background: #fffced;
 	border-radius: 4px;
 	padding: 10px;
+}
+.wrapper h2{
+	float: left;
+	max-width: 50%;
+}
+.wrapper input[type=button]{
+	width: 100px;
+	display: inline;
+	position: relative;
+	float: right;
+	height: 30px;
+	background: #ffa500;
+	border-width: 0;
+	border-radius: 6px; 
+	margin: 15px;
+	font-size: 14px;
+	color: #fff;
 }
