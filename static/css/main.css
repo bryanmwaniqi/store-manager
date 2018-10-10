@@ -1,0 +1,17 @@
+*{
+	font-family: sans-serif;
+}
+body{
+	margin: 0;
+}
+.navbar ul{
+	margin: 0;
+	height: 40px;
+	padding-left: 15px;
+	background: #ffa500;
+	position: fixed;
+}
+.navbar li.left-float{
+	float: left;
+	margin-left: 0}
+}
