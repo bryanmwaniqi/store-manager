@@ -259,14 +259,14 @@ div.product-grid:hover img.product{
 	transform:scale(1.4)
 }
 .main-container{
-	width: 75%;
+	width: 72%;
 	position: absolute;
 	margin-top: 100px;
 	margin-left: 20%;
 	height: 400px;
 	background: #fffced;
 	border-radius: 4px;
-	padding: 40px;
+	padding: 20px;
 }
 .main-container label{
 	display: block;
