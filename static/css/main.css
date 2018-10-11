@@ -271,7 +271,7 @@ div.product-grid:hover img.product{
 .main-container label{
 	display: block;
 }
-.main-container input[type=text]{
+.main-container input#display[type=text]{
 	display: inline-block;
 	position: relative;
 	border-radius: 6px;
