@@ -258,6 +258,15 @@ div.Product-info{
 div.product-grid:hover img.product{
 	transform:scale(1.4)
 }
+div.product-grid:hover div.product{
+	opacity:;
+}
+div.product-grid:hover div.product{
+	transform:scale(1.4)
+}
+
+
+
 .main-container{
 	width: 72%;
 	position: absolute;

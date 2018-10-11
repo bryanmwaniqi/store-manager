@@ -9,3 +9,6 @@ function deleteProduct() {
 function createProduct() {
     confirm("Are you sure you want to Add this product?");
 }
+function addToCart() {
+    window.alert("item added to cart");
+}
