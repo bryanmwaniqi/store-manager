@@ -3,6 +3,7 @@
 <head>
 	<title>Update-Delete-Inventory</title>
 	<link rel="stylesheet" type="text/css" href="../static/css/main.css">
+	
 </head>
 <body>
 	<!-- Horizontal top navbar-->
@@ -28,8 +29,10 @@
 		<input type="text" name="product-id" placeholder="product-name">
 		<input type="text" name="product-id" placeholder="product-category">
 		<input type="text" name="username" placeholder="price">
-		<input type="button"  value="Add product">
+		<input type="button" value="Update" onclick="updateProduct()"/>
+		<input type="button" value="Delete" onclick="deleteProduct()"/>
 	</div>
+	
 	<div class="grid">
 			<div class="product-grid">
 				<img class="product" src="../static/images/product_1.png" alt="product-1">
@@ -116,6 +119,6 @@
 				</div>
 			</div>		
 	</div>
-
+	<script type="text/javascript" src="../static/js/inventory.js"></script>
 </body>
 </html>
