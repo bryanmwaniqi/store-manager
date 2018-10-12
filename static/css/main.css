@@ -303,3 +303,14 @@ div.product-grid:hover img.product{
 .main-container p{
 	font-size: 10px;
 }
+select{
+	width: 200px;
+	margin: 5px 0 0 20px;
+	border: 1px solid #A9A9A9;
+	border-radius: 6px;
+	height: 39px;
+	clear: left;
+}
+.input-container h2{
+	margin-left: 20px;
+}
