@@ -34,3 +34,5 @@ class AllProducts(Resource):
 		products_list.append(payload)
 
 		return { 'products' : products_list }, 201
+
+class product(Resource):
