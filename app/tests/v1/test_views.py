@@ -1,6 +1,7 @@
 import unittest
 import json
 from app.api.v1.views import *
+from app import current_app
 
 class TestEndpoints(unittest.TestCase):
 	def setup(self):
