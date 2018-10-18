@@ -25,6 +25,8 @@ class TestEndpoints(unittest.TestCase):
 
 	def test_post_sale(self):
 		test_data = {'sale_id':1, 'products_tally':20, 'total_cost':300, 'attendant_id': 6432 }
+		url = self.app.post('/store-manager/api/v1/sales', data = json.dumps(test_data), content_type = 'application/json')
+		self.assertEquals(url.status_code, 201)
 
 if __name__ =='__main__':
 	app.run(exit=false)
