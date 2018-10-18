@@ -1,7 +1,6 @@
 class Config(object):
 	DEBUG = True
-	TESTING = False
-
+	TESTING = True
 class Development(Config):
 	DEBUG = True
 

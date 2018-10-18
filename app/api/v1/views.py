@@ -1,21 +1,20 @@
-from flask import Blueprint
+from flask import request
 from flask_restful import Api,Resource
 
-api = Api(__name__)
-
-blue_v1 = Blueprint('api-v1', __name__)
-
-product_items = []
+products_list = []
 
 class AllProducts(Resource):
 
 	def post(self):
+
+		""" Products class for getting all products and posting a product """
+
 		data = request.get_json()
 
-		# if len(data) > 5:
-		# 	return { 'Error': 'can only take item_id, name, category, price, quantity'}
+		if len(data) > 4:
+			return { 'Error':'can only take item_id, name, category, price, quantity' }
 
-		item_id = product_items[-1]['item_id'] + 1
+		item_id = len(products_list) + 1
 		name = data['name']
 		category = data['category']
 		price = data['price']
@@ -29,6 +28,6 @@ class AllProducts(Resource):
 				'quantity': quantity
 				}
 
-		product_items.append(payload)
+		products_list.append(payload)
 
-		return { 'product' : product_items }, 201
+		return { 'products' : products_list }, 201
