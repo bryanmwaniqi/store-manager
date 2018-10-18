@@ -7,7 +7,7 @@ class AllProducts(Resource):
 
 	def post(self):
 
-		""" Products class for getting all products and posting a product """
+		""" Products class for getting all products and adding a product to product list """
 
 		data = request.get_json()
 

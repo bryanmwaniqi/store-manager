@@ -1,6 +1,6 @@
 import unittest
 import json
-from api.v1.views import products
+from app.api.v1.views import *
 
 class TestEndpoints(unittest.TestCase):
 	def setup(self):
@@ -14,5 +14,5 @@ class TestEndpoints(unittest.TestCase):
 
 	
 
-if __name__ =='main':
+if __name__ =='__main__':
 	app.run(exit=false)
