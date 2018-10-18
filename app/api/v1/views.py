@@ -37,6 +37,10 @@ class AllProducts(Resource):
 
 class SpecificProduct(Resource):
 	def get(self,item_id):
+
+		if type(item_id, int) == False:
+			return { 'Error message':'Please supply an integer value'}
+
 		item_list = []
 		for product in products_list:
 			if item_id == product['item_id']:
