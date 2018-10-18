@@ -23,5 +23,8 @@ class TestEndpoints(unittest.TestCase):
 		url2 = self.app.get('/store-manager/api/v1/products/1')
 		self.assertEquals(url.status_code, 200)
 
+	def test_post_sale(self):
+		test_data = {'sale_id':1, 'products_tally':20, 'total_cost':300, 'attendant_id': 6432 }
+
 if __name__ =='__main__':
 	app.run(exit=false)
