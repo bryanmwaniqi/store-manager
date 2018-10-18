@@ -5,9 +5,12 @@ products_list = []
 
 class AllProducts(Resource):
 
-	def post(self):
+	""" Products class for getting all products and adding a product to product list """
 
-		""" Products class for getting all products and adding a product to product list """
+	def get(self):
+		return { 'products':products_list }
+
+	def post(self):
 
 		data = request.get_json()
 
