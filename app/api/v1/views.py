@@ -8,7 +8,7 @@ class AllProducts(Resource):
 	""" Products class for getting all products and adding a product to product list """
 
 	def get(self):
-		return { 'products':products_list }
+		return { 'products':products_list }, 200
 
 	def post(self):
 
