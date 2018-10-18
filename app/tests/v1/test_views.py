@@ -17,5 +17,11 @@ class TestEndpoints(unittest.TestCase):
 		url = self.app.get('/store-manager/api/v1/products')
 		self.assertEquals(url.status_code, 200)
 
+	def test_get_specific_product(self):
+		url = self.app.get('/store-manager/api/v1/products/tie')
+		self.assertEquals(url.status_code, 404)
+		url2 = self.app.get('/store-manager/api/v1/products/1')
+		self.assertEquals(url.status_code, 200)
+
 if __name__ =='__main__':
 	app.run(exit=false)
