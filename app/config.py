@@ -1,5 +1,5 @@
 class Config(object):
-	DEBUG = False
+	DEBUG = True
 	TESTING = False
 
 class Development(Config):
@@ -10,9 +10,3 @@ class Production(Config):
 
 class Testing(Config):
 	TESTING = True
-		
-
-app_config = {
-	'development':Development,
-	'Testing':Testing
-}
