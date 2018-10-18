@@ -35,4 +35,12 @@ class AllProducts(Resource):
 
 		return { 'products' : products_list }, 201
 
-class product(Resource):
+class SpecificProduct(Resource):
+	def get(self,item_id):
+		item_list = []
+		for product in products_list:
+			if item_id == product['item_id']:
+				item.list.append(product)
+				return { 'product': item_list[0] }, 200
+
+		return { 'message': 'no such product found'}, 404
