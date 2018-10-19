@@ -50,10 +50,10 @@ class SpecificProduct(Resource):
 		item_list = []
 		for product in products_list:
 			if item_id == product['item_id']:
-				item.list.append(product)
+				item_list.append(product)
 				return { 'product': item_list[0] }, 200
 
-		return { 'message': 'no such product found'}, 404
+		# return { 'message': 'no such product found'}, 404
 
 class SaleOrders(Resource):
 
@@ -94,7 +94,7 @@ class SaleOrders(Resource):
 			if products_tally <= available:
 				rem = available - products_tally
 				sale_item[0].update(quantity = rem)
-				sale_orders_list.append(sale_item)
+				sale_orders_list.append(sale_item[0])
 				return { 'success':'Order succesfuly placed'}, 201
 
 		return { 'error': 'product not in stock'}, 404
