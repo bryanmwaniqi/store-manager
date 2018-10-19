@@ -19,6 +19,9 @@ class AllProducts(Resource):
 		if len(data) > 4:
 			return { 'Error':'can only take item_id, name, category, price, quantity' }
 
+		if 'name' and 'category' and 'price' and 'quantity' not in data.keys():
+			return {'error': 'Please provide name, category, price, quantity'}
+
 		item_id = len(products_list) + 1
 		name = data['name']
 		category = data['category']
@@ -38,9 +41,10 @@ class AllProducts(Resource):
 		return { 'products' : products_list }, 201
 
 class SpecificProduct(Resource):
+
 	def get(self,item_id):
 
-		if type(item_id, int) == False:
+		if isinstance(item_id, int) == False:
 			return { 'Error message': 'Please supply an integer value'}
 
 		item_list = []
@@ -51,7 +55,7 @@ class SpecificProduct(Resource):
 
 		return { 'message': 'no such product found'}, 404
 
-class sale_orders(Resource):
+class SaleOrders(Resource):
 
 	def get(self):
 		return { 'sale_orders':sale_orders_list}, 200
@@ -60,7 +64,7 @@ class sale_orders(Resource):
 		data = request.get_json()
 
 		sale_id = len(sale_orders_list)  + 1
-		date = datetime.datetime.now()
+		date = datetime.now()
 		product_id = data['product_id']
 		products_tally = data['products_tally']
 		total_cost =data['total_cost']
@@ -68,8 +72,8 @@ class sale_orders(Resource):
 
 		payload = {
 				'sale_id': sale_id,
-				'date': date
-				'product_id': product_nid,
+				'date': date,
+				'product_id': product_id,
 				'products_tally' : products_tally,
 				'total_cost' : total_cost,
 				'attendant_id' : attendant_id
@@ -81,15 +85,16 @@ class sale_orders(Resource):
 			available = sale_item[0]['quantity']
 			if products_tally <= available:
 				rem = available - products_tally
-				sale_item[0].update('quantity' = rem)
-				return { 'success':'Order succesfuly placed'}
+				sale_item[0].update(quantity = rem)
+				sale_orders_list.append(sale_item)
+				return { 'success':'Order succesfuly placed'}, 201
 
-		return { 'error': 'product not in stock'}
+		return { 'error': 'product not in stock'}, 404
 
-class Attendant_sale():
+class AttendantSale(Resource):
 	def get(self,sale_id):
 
-		if type(sale_id, int) == False:
+		if isinstance(sale_id, int) == False:
 			return { 'Error message': 'Please supply an integer value for sale_id'}
 
 		for sale in sale_orders_list:
