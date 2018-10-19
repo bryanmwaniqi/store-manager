@@ -16,6 +16,7 @@ def create_app(default_config=Config):
 
     api.add_resource(AllProducts, '/products', endpoint = 'products')
     api.add_resource(SpecificProduct, '/products/<int:item_id>', endpoint = 'product')
+    api.add_resource(sale_orders, '/sales', endpoint = 'sales')
     app.register_blueprint(blue_v1)
 
     return app
