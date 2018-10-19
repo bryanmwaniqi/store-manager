@@ -1,5 +1,6 @@
 from flask import request
 from flask_restful import Api,Resource
+from datetime import datetime
 
 products_list = []
 sale_orders_list = []
@@ -55,6 +56,7 @@ class sale_orders(Resource):
 		data = request.get_json()
 
 		sale_id = len(sale_orders_list)  + 1
+		date = datetime.datetime.now()
 		product_id = data['product_id']
 		products_tally = data['products_tally']
 		total_cost =data['total_cost']
@@ -62,6 +64,7 @@ class sale_orders(Resource):
 
 		payload = {
 				'sale_id': sale_id,
+				'date': date
 				'product_id': product_nid,
 				'products_tally' : products_tally,
 				'total_cost' : total_cost,
@@ -76,8 +79,9 @@ class sale_orders(Resource):
 				rem = available - products_tally
 				sale_item[0].update('quantity' = rem)
 				return { 'success':'Order succesfuly placed'}
+
 		
-		return { 'error': 'product not in stock'}
+		
 
 		
 
