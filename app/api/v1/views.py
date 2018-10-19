@@ -88,9 +88,18 @@ class sale_orders(Resource):
 
 class Attendant_sale():
 	def get(self,sale_id):
-		
+
 		if type(sale_id, int) == False:
 			return { 'Error message': 'Please supply an integer value for sale_id'}
+
+		for sale in sale_orders_list:
+			if sale_id == sale['sale_id']:
+				return { 'sale': sale}, 200
+
+		return { 'message': 'No sale match found'}, 404
+
+
+
 
 
 
