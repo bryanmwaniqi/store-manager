@@ -53,9 +53,11 @@ class SpecificProduct(Resource):
 				item_list.append(product)
 				return { 'product': item_list[0] }, 200
 
-		# return { 'message': 'no such product found'}, 404
+		return { 'message': 'no such product found'}, 404
 
 class SaleOrders(Resource):
+
+	""" sales class for getting all products and adding a product to product list """
 
 	def get(self):
 		return { 'sale_orders':sale_orders_list}, 200
@@ -100,6 +102,8 @@ class SaleOrders(Resource):
 		return { 'error': 'product not in stock'}, 404
 
 class AttendantSale(Resource):
+
+	""" Attendant sale resource class for getting a specific sale"""
 	def get(self,sale_id):
 
 		if isinstance(sale_id, int) == False:
