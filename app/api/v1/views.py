@@ -61,7 +61,15 @@ class SaleOrders(Resource):
 		return { 'sale_orders':sale_orders_list}, 200
 
 	def post(self):
+
 		data = request.get_json()
+
+		if len(data) > 4:
+			return { 'Error': 'Overload, can only take product_id, products_tally, total_cost, attendant_id' }
+
+		if 'product_id' and 'products_tally' and 'total_cost' and 'attendant_id' not in data.keys():
+			return {'error': 'Please provide product_id, products_tally, total_cost, attendant_id'}
+		
 
 		sale_id = len(sale_orders_list)  + 1
 		date = datetime.now()
