@@ -3,6 +3,7 @@ import json
 from flask import current_app
 
 class TestEndpoints(unittest.TestCase):
+
 	def setup(self):
 		self.current_app.test_client()
 
