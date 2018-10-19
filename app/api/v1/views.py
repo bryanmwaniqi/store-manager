@@ -52,6 +52,10 @@ class SpecificProduct(Resource):
 		return { 'message': 'no such product found'}, 404
 
 class sale_orders(Resource):
+
+	def get(self):
+		return { 'sale_orders':sale_orders_list}, 200
+
 	def post(self):
 		data = request.get_json()
 
@@ -82,7 +86,14 @@ class sale_orders(Resource):
 
 		return { 'error': 'product not in stock'}
 
+class Attendant_sale():
+	def get(self,sale_id):
 		
+		if type(sale_id, int) == False:
+			return { 'Error message': 'Please supply an integer value for sale_id'}
+
+
+
 		
 
 		
