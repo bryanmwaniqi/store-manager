@@ -80,6 +80,8 @@ class sale_orders(Resource):
 				sale_item[0].update('quantity' = rem)
 				return { 'success':'Order succesfuly placed'}
 
+		return { 'error': 'product not in stock'}
+
 		
 		
 
