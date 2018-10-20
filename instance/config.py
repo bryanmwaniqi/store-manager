@@ -13,6 +13,7 @@ class Testing(Config):
 		
 
 app_config = {
+	'Production': Production,
 	'development':Development,
-	'Testing':Testing
+	'testing':Testing
 }

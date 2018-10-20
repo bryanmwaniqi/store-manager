@@ -1,6 +1,11 @@
-from flask import request
+from flask import request, Blueprint
 from flask_restful import Api,Resource
 from datetime import datetime
+
+
+Blue_v1 = Blueprint('Blue_v1', __name__)
+
+api = Api(Blue_v1, prefix = '/store-manager/api/v1')
 
 products_list = []
 sale_orders_list = []
@@ -17,7 +22,7 @@ class AllProducts(Resource):
 		data = request.get_json()
 
 		if len(data) > 4:
-			return { 'Error':'can only take item_id, name, category, price, quantity' }
+			return { 'Error':'can only take name, category, price, quantity' }
 
 		if 'name' and 'category' and 'price' and 'quantity' not in data.keys():
 			return {'error': 'Please provide name, category, price, quantity'}
@@ -52,8 +57,10 @@ class SpecificProduct(Resource):
 			if item_id == product['item_id']:
 				item_list.append(product)
 				return { 'product': item_list[0] }, 200
+			else:
+				return { 'message': 'no such product found'}, 404
 
-		return { 'message': 'no such product found'}, 404
+		
 
 class SaleOrders(Resource):
 
@@ -104,6 +111,7 @@ class SaleOrders(Resource):
 class AttendantSale(Resource):
 
 	""" Attendant sale resource class for getting a specific sale"""
+	
 	def get(self,sale_id):
 
 		if isinstance(sale_id, int) == False:
@@ -117,7 +125,10 @@ class AttendantSale(Resource):
 
 
 
-
+api.add_resource(AllProducts, '/products', endpoint='products')
+api.add_resource(SpecificProduct, '/products/<int:item_id>', endpoint='product')
+api.add_resource(SaleOrders, '/sales', endpoint='sales')
+api.add_resource(AttendantSale, '/sales/<int:sale_id>', endpoint='sale')
 
 
 		
